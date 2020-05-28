@@ -9,7 +9,7 @@ depends=("glibc")
 makedepends=("gcc")
 provides=("ncc")
 source=("https://nebulacentre.net/code/ncc.c")
-md5sums=("91b15cbd6b18b4bc80572516203d9e31")
+md5sums=("af3e96181b76683034c232304a7edf89")
 url="https://nebulacentre.net"
 
 build() {
