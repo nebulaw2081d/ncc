@@ -42,12 +42,12 @@
 #define VERSION 1.0
 
 void mainClock() {
+	int hour, min, sec;
+	char *strhour, *strmin, *strsec;
 	for (;;) {
 		time_t direct;
 		struct tm* currentTime;
 		struct tm* lastTime;
-		int hour, min, sec;
-		char *strhour, *strmin, *strsec;
 		strhour = "";
 		strmin = "";
 		strsec = "";
@@ -60,7 +60,7 @@ void mainClock() {
 			strhour = "0";
 		}
 		if (min < 10) {
-			strhour = "0";
+			strmin = "0";
 		}
 		if (sec < 10) {
 			strsec = "0";
