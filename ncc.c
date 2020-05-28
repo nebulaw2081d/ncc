@@ -132,7 +132,7 @@ void help() {
 }
 
 void version() {
-	printf("The Nebula Centre Project @ 2020\nhttps://nebulacentre.net/about.html\n\nncc version %.1f", VERSION);
+	printf("The Nebula Centre Project @ 2020\nhttps://nebulacentre.net/about.html\n\nncc is licensed under the GPL V2 license.\nncc version %.1f", VERSION);
 }
 
 int main(int argc, char *argv[]) {
