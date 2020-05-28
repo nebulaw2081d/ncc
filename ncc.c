@@ -68,7 +68,7 @@ void mainClock() {
 		}
 		printf("\r        ");
 		printf("\r%s%i:%s%i:%s%i", strhour, hour, strmin, min, strsec, sec);
-		fflush(stdout);
+		fflush(stdout); // NEEDED, otherwise time will not print.
 		sleep(1);
 	}
 }
@@ -94,7 +94,7 @@ void timer(int duration) {
 		}
 		printf("\r        ");
 		printf("\r%s%i:%s%i:%s%i", strhour, hour, strmin, min, strsec, sec);
-		fflush(stdout);
+		fflush(stdout); // NEEDED, otherwise time will not print.
 		duration--;
 		sleep(1);
 	}
@@ -122,7 +122,7 @@ void stopwatch() {
 		}
 		printf("\r        ");
 		printf("\r%s%i:%s%i:%s%i", strhour, hour, strmin, min, strsec, sec);
-		fflush(stdout);
+		fflush(stdout); // NEEDED, otherwise time will not print.
 		duration++;
 		sleep(1);
 	}
@@ -137,12 +137,12 @@ void version() {
 }
 
 int main(int argc, char *argv[]) {
-	if (argc > 1) {
-		if (argc > 3) {
+	if (argc > 1) { // Are there any arguments? If not, just run the clock.
+		if (argc != 3) { // Too many arguments? Help out the user.
 			help();
 			return 0;
 		}
-		for (int i = 0; i < argc; i++) {
+		for (int i = 0; i < argc; i++) { // Run the respective function depending on the argument supplied.
 			if (!strcmp(argv[i], "--help") || !strcmp(argv[i], "-h")) {
 				help();
 				return 0;
@@ -159,15 +159,11 @@ int main(int argc, char *argv[]) {
 			stopwatch();
 		}
 		else if (!strcmp(argv[1], "--timer") || !strcmp(argv[1], "-t")) {
-			if (argc != 3) {
-				help();
-				return 0;
-			}
-			char timeBuf[11];
-			int duration = 0;
-			int currentSeek = 0;
-			int cCount = 0;
-			for (int k = 0; k < strlen(argv[2]); k++) {
+			char timeBuf[11]; // Stores each numerical section of the input for the timer in char form, prior to each colon.
+			int duration = 0; // Stores the total duration in int form.
+			int currentSeek = 0; // Stores which section of colon separated input is being worked on.
+			int cCount = 0; // Stores the amount of colons in the argument following the timer argument.
+			for (int k = 0; k < strlen(argv[2]); k++) { // Counts how many colons are present in the argument following the timer argument.
 				if (argv[2][k] == ':') {
 					cCount++;
 				}
@@ -176,41 +172,41 @@ int main(int argc, char *argv[]) {
 					return 0;
 				}
 			}
-			if (cCount < 2) {
+			if (cCount < 2) { // Skips deriving the amount of seconds from the hours if colon separated input is provided.
 				currentSeek = 1;
 			}
-			else if (cCount > 2) {
+			else if (cCount > 2) { // Too many colons in the input? Help out the user.
 				help();
 				return 0;
 			}
-			for (int k = 0; k < strlen(argv[2]); k++) {
-				if (argv[2][k] != ':') {
+			for (int k = 0; k < strlen(argv[2]); k++) { // Iterates through each character in the argument following the timer argument.
+				if (argv[2][k] != ':') { // If the current character is NOT a colon, add it the time buffer.
 					strncat(timeBuf, &argv[2][k], 1);
 				}
-				else {
+				else { // If the current character is a colon...
 					switch (currentSeek) {
-						case 0:
+						case 0: // If we are told to calculate the hour (the 01 in 01:23:04), calculate the amount of seconds we should add to the duration.
 							duration += 60 * (60 * atoi(timeBuf));
 							memset(timeBuf, 0, 11);
 							currentSeek++;
 							break;
-						case 1:
+						case 1: // If we are told to calculate the minutes (the 23 in 01:23:04), calculate the amount of seconds we should add to the duration.
 							duration += 60 * atoi(timeBuf);
 							memset(timeBuf, 0, 11);
 							break;
 					}
 				}
 			}
-			duration += atoi(timeBuf);
-			timer(duration);
+			duration += atoi(timeBuf); // Add the amount of seconds to the duration (the 04 in 01:23:04).
+			timer(duration); // Call the timer function.
 		}
-		else {
+		else { // If the argument supplied does not match any of the above, help out the user.
 			help();
 			return 0;
 		}
 	}
-	else {
-		mainClock();
+	else { // If there are no arguments supplied, run the clock.
+		mainClock(); 	
 	}
 	return 0;
 }
