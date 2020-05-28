@@ -172,12 +172,10 @@ int main(int argc, char *argv[]) {
 					cCount++;
 				}
 				if (argv[2][k] != ':' && !(isdigit(argv[2][k]))) {
-					printf("%c is not a digit!", argv[2][k]);
 					help();
 					return 0;
 				}
 			}
-			printf("%d", cCount);
 			if (cCount < 2) {
 				currentSeek = 1;
 			}
