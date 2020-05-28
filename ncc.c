@@ -170,7 +170,8 @@ int main(int argc, char *argv[]) {
 				if (argv[2][k] == ':') {
 					cCount++;
 				}
-				if (!argv[2][k] == ':' || !isdigit(argv[2][k])) {
+				if (argv[2][k] != ':' && !(isdigit(argv[2][k]))) {
+					printf("%c is not a digit!", argv[2][k]);
 					help();
 					return 0;
 				}
