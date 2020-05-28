@@ -1,34 +1,35 @@
-/*      #############
-	#    _   _ 
-	#   | \ | |    The Nebula Centre Project @ 2020
-	#   |  \| |    https://nebulacentre.net
-	#   | |\  |    https://nebulacentre.net/about.html
-	#   |_| \_|    https://nebulacentre.net/code.html
-	#
-	#############
-
-	The Nebula Centre Project is an active endeavour created by a small group.
-	The Nebula Centre Project does not currently have an end goal, but does
-	have a series of primary goals, which are currently being pursued and will
-	always be considered in future judgements. To learn more about the
-	Nebula Centre Project visit the project on the web at https://nebulacentre.net/about.html.
-
-	We always welcome lain.
+/*
+  ##############
+  #    _   _ 
+  #   | \ | |     The Nebula Centre Project @ 2020
+  #   |  \| |     https://nebulacentre.net
+  #   | |\  |     https://nebulacentre.net/about.html
+  #   |_| \_|     https://nebulacentre.net/code.html
+  #
+  ##############
+  
+  The Nebula Centre Project is an active endeavour created by a small group.
+  The Nebula Centre Project does not currently have an end goal, but does
+  have a series of primary goals, which are currently being pursued and will
+  always be considered in future judgements. To learn more about the
+  Nebula Centre Project visit the project on the web at https://nebulacentre.net/about.html.
+  
+  We always welcome lain.
 */
 
 /*
-	This program is free software: you can redistribute it and/or modify
-	it under the terms of the GNU General Public License as published by
-	the Free Software Foundation, either version 3 of the License, or
-	(at your option) any later version.
-
-	This program is distributed in the hope that it will be useful,
-	but WITHOUT ANY WARRANTY; without even the implied warranty of
-	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-	GNU General Public License for more details.
-
-	You should have received a copy of the GNU General Public License
-	along with this program. If not, see <https://www.gnu.org/licenses/>.
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU General Public License
+  along with this program. If not, see <https://www.gnu.org/licenses/>.
 */
 
 #include <stdio.h>
