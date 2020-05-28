@@ -5,7 +5,7 @@ ifeq ($(PREFIX),)
 endif
 
 ncc: ncc.c
-	$(CC) -g -o ncc ncc.c -lncurses
+	$(CC) -g -o ncc ncc.c
 
 install: ncc
 	cp -p ncc "$(PREFIX)/bin"
