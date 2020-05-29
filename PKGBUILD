@@ -8,7 +8,7 @@ license=("GPL2")
 depends=("glibc")
 makedepends=("gcc")
 provides=("ncc")
-source=("https://nebulacentre.net/code/ncc.c")
+source=("https://nebulacentre.net/code/ncc/ncc.c")
 md5sums=("5672d7a6870f4416f4b7cd91390a2a02")
 url="https://nebulacentre.net"
 
